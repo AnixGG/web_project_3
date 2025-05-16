@@ -7,7 +7,6 @@ const App = () => {
         <>
             <Header />
             <main>
-                <Loader />
                 <ProductList />
                 <ProductDetails />
             </main>
