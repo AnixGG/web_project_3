@@ -2,14 +2,16 @@ import { useAppContext } from '../context/AppContext';
 import { useProducts } from '../hooks/useProducts';
 
 const ProductList = ({ onSelect }) => {
-    const { data, selectedProduct } = useAppContext();
+    const { data, selectedProduct, category } = useAppContext();
     const { loadProductDetails } = useProducts();
 
     if (selectedProduct) return null;
 
+    const filtered = category === 'all' ? data : data.filter(product => product.category === category);
+
     return (
         <div className="products">
-            {data.map(product => (
+            {filtered.map(product => (
                 <div key={product.id} className="product-card">
                     <img src={product.image} alt={product.title} className="product-image" />
                     <div className="product-info">

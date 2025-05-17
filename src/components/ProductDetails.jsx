@@ -1,7 +1,7 @@
 import { useAppContext } from '../context/AppContext';
 
 const ProductDetails = ({ onBack }) => {
-    const { selectedProduct } = useAppContext();
+    const { selectedProduct, setSelectedProduct } = useAppContext();
 
     if (!selectedProduct) return null;
 

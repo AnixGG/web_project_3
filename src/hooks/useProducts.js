@@ -19,7 +19,7 @@ export const useProducts = () => {
         }
     };
 
-    const showDetails = async (id) => {
+    const loadProductDetails = async (id) => {
         try {
             setLoading(true);
             const res = await fetch(`${API_URL}/products/${id}`);
@@ -33,5 +33,5 @@ export const useProducts = () => {
     };
 
     useEffect(() => {loadAllProducts();}, []);
-    return { loadAllProducts, showDetails };
+    return { loadAllProducts, loadProductDetails};
 };

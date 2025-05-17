@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
     const [data, setData] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [category, setCategory] = useState('all');
 
     return (
         <AppContext.Provider
@@ -16,6 +17,8 @@ export const AppProvider = ({ children }) => {
                 setSelectedProduct,
                 loading,
                 setLoading,
+                category,
+                setCategory,
             }}
         >
             {children}
